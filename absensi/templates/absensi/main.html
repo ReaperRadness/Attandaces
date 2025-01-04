@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button  class="pill-button" type="submit">
+                <div>
+                    Absen
+                </div>
+            </button>
+        </form>
+    </div>
+    <div>
+        {% for x in history %}
+            <h1>{{ history.name }} {{history.time}}</h1>
+        {% endfor %}
+    </div>
+
+</body>
+    <style>
+
+        body{
+            background-color: rgb(255, 255, 255);
+        }
+        .pill-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: red;
+            font-weight: 1000;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Gradient background for the button */
+        .pill-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to left, #007BFF 50%, #0056b3 50%);
+            background-size: 200% 100%;
+            background-position: right;
+            transition: background-position 0.2s ease;
+            z-index: -1;
+        }
+
+        /* Hover effect for the gradient */
+        .pill-button:hover::before {
+            background-position: left;
+        }
+
+        /* Image overlay on hover */
+        .pill-button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*background-image: url("Milkyway.jpg"); /* Replace the link with your image URL */
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        /* Show image overlay on hover */
+        .pill-button:hover::after {
+            opacity: 1;
+        }
+    </style>
+</html>
