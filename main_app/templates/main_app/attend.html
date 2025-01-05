@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attend</title>
+</head>
+<body>
+    
+
+    <h1>Attendace</h1>
+    <p>Click the button below to mark attendance</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button> Attend </button>
+
+    </form>
+
+</body>
+</html>

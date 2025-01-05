@@ -22,4 +22,8 @@ from absensi.views import register
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', register),
+    path('', include('main_app.urls')),
+    path('login/', auth_views.LoginView.as_view(template_name="absensi/login.html"), name="login"),
+    path('logout/', auth_views.LogoutView.as_view(template_name="absensi/logout.html"), name="logout")
 ]
+
