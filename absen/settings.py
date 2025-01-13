@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'absensi.apps.AbsensiConfig',
     'main_app.apps.MainAppConfig',
-    
+    'location_field.apps.DefaultConfig',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +126,9 @@ LOGIN_REDIRECT_URL = 'attend_view'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Location
+
+LOCATION_FIELD = {
+    'provider.openstreetmap.max_zoom': 18,
+}
