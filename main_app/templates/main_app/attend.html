@@ -15,6 +15,21 @@
         {% csrf_token %}
         <button> Attend </button>
 
+
+    {% if status == 2 %}
+        <p>You can only attend once</p>
+    {% endif %}
+
+    {% if status == 3 %}
+        <p>your account has been created</p>
+    {% endif %}
+
+    {% if status == 0 %}
+        <p>You have to log in first</p>
+        <a href = "{% url  'login' %}">LOGIN</a>
+        <a href = "{% url  'register' %}">REGISTER</a>
+    {% endif %}
+
     </form>
 
 </body>
